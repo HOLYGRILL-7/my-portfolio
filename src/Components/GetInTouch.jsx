@@ -1,88 +1,118 @@
 const GetInTouch = () => {
-  return (
-    <div className="h-50 bg-gray-50 py-20 px-10">
-      <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-12">
-          <h1 className="text-5xl font-bold text-gray-900 mb-4">
-            Get In <span className="text-violet-700">Touch</span>
-          </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            I'd love to hear from you! Say hello, through any of the channels below.
-          </p>
+    return (
+        <div className="bg-cream py-16 sm:py-20 md:py-10 px-4 sm:px-6 md:px-10">
+            <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-start">
+                {/* Left column */}
+                <div className="space-y-2">
+                    <h1 className="font-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight text-gray5900">
+                        Got a project in mind? <span className="text-terracotta">Let's talk about it.</span>
+                    </h1>
+
+                    <p className="text-lg text-gray-600 max-w-md">
+                        I'm open to freelance work, collaboration, or just a good conversation about what you're
+                        building. Use the form to tell me what's on your mind.
+                    </p>
+
+                    <div className="space-y-3 pt-4">
+                        <div className="border-b-gray-300 border-b p-2">
+                            <p className="text-xs font-medium uppercase tracking-wider text-gray-900 mb-1">LinkedIn</p>
+                            <a
+                                href="https://www.linkedin.com/in/praise-jones-oduro-65a47a253/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-lg font-medium text-gray-500 hover:text-terracotta transition-colors duration-200"
+                            >
+                                praise-jones-oduro
+                            </a>
+                        </div>
+
+                        <div className="border-b-gray-300 border-b p-2">
+                            <p className="text-xs font-medium uppercase tracking-wider text-gray-900 mb-1">GitHub</p>
+                            <a
+                                href="https://github.com/HOLYGRILL-7"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-lg font-medium text-gray-500 hover:text-terracotta transition-colors duration-200"
+                            >
+                                HOLYGRILL-7
+                            </a>
+                        </div>
+
+                        <div className=" p-2">
+                            <p className="text-xs font-medium uppercase tracking-wider text-gray-900 mb-1">Email</p>
+                            <a
+                                href="mailto:bismarkjonesoduro@gmail.com"
+                                className="text-lg font-medium text-gray-500 hover:text-terracotta transition-colors duration-200"
+                            >
+                                bismarkjonesoduro@gmail.com
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Right column: contact form */}
+                <div>
+                    {/* TODO: replace this action URL with the real Formspree endpoint */}
+                    <form action="https://formspree.io/f/REPLACE_WITH_YOUR_FORM_ID" method="POST" className="space-y-6 mt-4">
+                        <div>
+                            <label
+                                htmlFor="name"
+                                className="block text-xs font-medium uppercase tracking-wider text-gray-500 mb-2"
+                            >
+                                Name
+                            </label>
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                placeholder="Your name"
+                                className="w-full bg-gray-100/50 border border-gray-300 rounded-lg px-4 py-3 text-gray5900 placeholder-gray-400 focus:outline-none focus:border-terracotta transition-colors duration-200"
+                            />
+                        </div>
+
+                        <div>
+                            <label
+                                htmlFor="email"
+                                className="block text-xs font-medium uppercase tracking-wider text-gray-500 mb-2"
+                            >
+                                Email
+                            </label>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="your@email.com"
+                                className="w-full bg-gray-100/50 border border-gray-300 rounded-lg px-4 py-3 text-gray5900 placeholder-gray-400 focus:outline-none focus:border-terracotta transition-colors duration-200"
+                            />
+                        </div>
+
+                        <div>
+                            <label
+                                htmlFor="message"
+                                className="block text-xs font-medium uppercase tracking-wider text-gray-500 mb-2"
+                            >
+                                Message
+                            </label>
+                            <textarea
+                                id="message"
+                                name="message"
+                                rows={6}
+                                placeholder="What are you building, or what would you like to talk about?"
+                                className="w-full bg-gray-100/50 border border-gray-300 rounded-lg px-4 py-3 text-gray5900 placeholder-gray-400 focus:outline-none focus:border-terracotta transition-colors duration-200 resize-none"
+                            />
+                        </div>
+
+                        <button
+                            type="submit"
+                            className="cursor-pointer font-medium uppercase tracking-wider bg-transparent border-2 border-terracotta text-terracotta px-6 py-3 rounded-lg hover:bg-terracotta hover:text-white transition-all duration-300 ease-in-out"
+                        >
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
         </div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div className="bg-white w-full rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-            <div className="text-4xl mb-4">📧</div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">Email</h3>
-            <p className="text-gray-600 mb-4">Drop me a line anytime</p>
-            <a
-              href="mailto:bismarkjonesoduro@gmail.com"
-              className="inline-block bg-violet-700 text-white px-6 py-3 rounded-lg hover:bg-violet-800 transition-colors duration-200"
-            >
-              Send Email
-            </a>
-          </div>
-
-          <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-            <div className="text-4xl mb-4">💼</div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">
-              LinkedIn
-            </h3>
-            <p className="text-gray-600 mb-4">Let's connect professionally</p>
-            <a
-              href="https://www.linkedin.com/in/praise-jones-oduro-65a47a253/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-200"
-            >
-              Connect
-            </a>
-          </div>
-
-          <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-            <div className="text-4xl mb-4">🐙</div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">GitHub</h3>
-            <p className="text-gray-600 mb-4">Explore my code. <br /> A click away</p>
-            <a
-              href="https://github.com/HOLYGRILL-7"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-gray-900 text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition-colors duration-200"
-            >
-              View Profile
-            </a>
-          </div>
-
-          <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-            <div className="text-4xl mb-4">📱</div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">Phone</h3>
-            <p className="text-gray-600 mb-4">Let's have a chat. <br /> A chat away</p>
-            <a
-              href="tel:+233245975593"
-              className="inline-block bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors duration-200"
-            >
-              Call Now
-            </a>
-          </div>
-        </div>
-
-        {/* <div className="mt-16 text-center">
-          <div className="bg-white rounded-xl p-8 shadow-lg">
-            <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-              Based in Ghana 🇬🇭
-            </h3>
-            <p className="text-gray-600 mb-4">
-              Located in the heart of West Africa, I'm available for remote work and local collaborations.
-            </p>
-            <p className="text-sm text-gray-500">
-              Response time: Usually within 24 hours
-            </p>
-          </div>
-        </div> */}
-      </div>
-    </div>
-  );
+    );
 };
 
 export default GetInTouch;

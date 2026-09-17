@@ -13,11 +13,11 @@ const About = () => {
   ];
 
   return (
-    <div className="mt-3 px-10 max-w-7xl mx-auto">
+    <div className="mt-3 px-4 sm:px-6 md:px-10 max-w-7xl mx-auto">
       {/* Header Section */}
       <div className="mb-8">
-        <h1 className="inline font-bold text-7xl">About Me</h1>
-        <h1 className="inline font-bold text-7xl text-violet-700">.</h1>
+        <h1 className="inline font-bold text-5xl sm:text-6xl md:text-7xl">About Me</h1>
+        <h1 className="inline font-bold text-5xl sm:text-6xl md:text-7xl text-violet-700">.</h1>
 
         <div className="flex items-start gap-4 mt-3">
           <div className="bg-violet-700 h-25 w-1 rounded-full mt-1" />

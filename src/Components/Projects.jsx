@@ -8,9 +8,6 @@ import {
   Monitor,
   Zap,
 } from "lucide-react";
-import image from "../assets/iquote.png";
-import image1 from "../assets/time.png";
-import image2 from "../assets/Portfolio.png";
 import image3 from "../assets/Shopmart.png";
 
 const ProjectsPage = () => {
@@ -20,77 +17,41 @@ const ProjectsPage = () => {
   const projects = [
     {
       id: 1,
-      title: "E-Mart",
+      title: "Pool",
       description:
-        "A dashing site for your online shopping needs.Your living room can come alive now with the help of this site",
+        "A React Native app that lets families save toward shared goals together, with real payments powered by Paystack and secure fund routing through Paystack subaccounts. Firebase Cloud Functions handle the backend end to end.",
       image: image3,
-      category: "web",
-      technologies: ["React", "Javascript", "Tailwind CSS", ],
+      category: "mobile",
+      technologies: ["React Native", "Paystack", "Firebase Cloud Functions"],
       liveUrl: "",
-      githubUrl: "https://github.com/HOLYGRILL-7/Shopmart",
+      githubUrl: "https://github.com/HOLYGRILL-7/PoolUp",
       featured: true,
     },
     {
       id: 2,
-      title: "TO-DO App",
+      title: "Kofi",
       description:
-        "A modern task management application with drag-and-drop functionality, team collaboration features, and deadline tracking.",
+        "An AI chatbot that brings Ghanaian culture and tourism to life, built with Streamlit and the Gemini API. Wrapped in a Kente-inspired UI that makes every conversation feel distinctly Ghanaian.",
       image:
         "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop",
       category: "web",
-      technologies: ["React", "Javascript", "Tailwind CSS", ],
+      technologies: ["Streamlit", "Gemini API", "Python"],
       liveUrl: "",
-      githubUrl: "https://github.com/HOLYGRILL-7/MyFav-TodoApp/tree/master",
+      githubUrl: "https://github.com/HOLYGRILL-7/Cultural_Tourism-chatbot",
       featured: true,
     },
     {
       id: 3,
-      title: "Weather App",
+      title: "Sika",
       description:
-        "A responsive weather application with location-based forecasts, interactive maps, and beautiful weather animations.",
+        "An AI-powered personal finance tracker built in React Native, helping users log transactions, hit savings goals, and get smart insight into their spending.",
       image:
         "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=600&h=400&fit=crop",
       category: "mobile",
-      technologies: ["React Native", "Weather API", "Expo"],
+      technologies: ["React Native", "Firebase", "AI"],
       liveUrl: "",
-      githubUrl: "https://github.com/HOLYGRILL-7/Weather-Map",
-      featured: false,
-    },
-    {
-      id: 4,
-      title: "Portfolio Website",
-      description:
-        "A modern, responsive portfolio website showcasing creative work with smooth animations and interactive elements.",
-      image: image2,
-      category: "web",
-      technologies: ["React", "Framer Motion", "Tailwind CSS"],
-      liveUrl: "https://example.com",
-      githubUrl: "https://github.com/example",
-      featured: false,
-    },
-    {
-      id: 5,
-      title: "Bible Quote App",
-      description:
-        "A beautiful app aimed at solving the forgetfulness of Bible verses by providing users with the platform to search for the scriptures they need.",
-      image: image,
-      category: "mobile",
-      technologies: ["React Native", "Firebase", "Redux"],
-      liveUrl: "https://quote-i.netlify.app/",
-      githubUrl: "https://github.com/HOLYGRILL-7/I-QUOTE",
-      featured: false,
-    },
-    {
-      id: 6,
-      title: "Stop Watch",
-      description:
-        "Productivity coheres with time management, the perfect setting for building a stopwatch app that tracks, lapses and does all the other a watch does.",
-      image: image1,
-      category: "extension",
-      technologies: ["JavaScript", "Chrome API", "CSS3"],
-      liveUrl: "https://enhanced.tiiny.site/",
-      githubUrl: "https://github.com/HOLYGRILL-7/PRODIGY_WD_02-StopWatch-",
-      featured: false,
+      githubUrl: "https://github.com/HOLYGRILL-7/my-Sika-react-native",
+      featured: true,
     },
   ];
 
@@ -109,17 +70,16 @@ const ProjectsPage = () => {
   const featuredProjects = projects.filter((project) => project.featured);
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12">
+    <div className="min-h-screen bg-cream py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            My Projects
+            What I've Built
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            A collection of projects I've worked on, showcasing my skills in
-            frontend development, user experience design, and modern web
-            technologies.
+            Real products, not tutorials — full-stack apps with AI woven in,
+            built end-to-end from idea to something people can actually use.
           </p>
         </div>
 
@@ -214,7 +174,7 @@ const ProjectsPage = () => {
               <button
                 key={category.id}
                 onClick={() => setActiveFilter(category.id)}
-                className={`flex items-center gap-2 px-6 py-3 rounded-full font-medium transition-all duration-300 ${
+                className={`cursor-pointer flex items-center gap-2 px-6 py-3 rounded-full font-medium transition-all duration-300 ${
                   activeFilter === category.id
                     ? "bg-violet-600 text-white shadow-lg transform scale-105"
                     : "bg-white text-gray-700 hover:bg-violet-50 hover:text-violet-600 shadow-md"
@@ -298,7 +258,7 @@ const ProjectsPage = () => {
               I'm always open to discussing new opportunities and exciting
               projects. Let's create something amazing together!
             </p>
-            <button className="bg-white text-violet-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105">
+            <button className="cursor-pointer bg-white text-violet-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105">
               Get In Touch
             </button>
           </div>

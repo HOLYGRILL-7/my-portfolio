@@ -6,7 +6,7 @@ const Toggle = (props) => {
     <div className="flex justify-center items-center h-screen">
   <button
     onClick={props.toggle}
-    className={`px-6 py-2  rounded-md font-semibold transition-colors duration-300
+    className={`cursor-pointer px-6 py-2  rounded-md font-semibold transition-colors duration-300
       ${
         props.isDarkMode
           ? "bg-yellow-400 text-gray-900 hover:bg-yellow-500"
