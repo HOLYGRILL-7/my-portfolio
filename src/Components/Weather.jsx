@@ -4,7 +4,7 @@ import axios from "axios";
 
 const Weather = ({ lat, lon }) => {
   const [weather, setWeather] = useState(null);
-  const API_KEY = "9425598b5f95339e08ee0b7b5d3870ce"; // You can put this in .env later
+  const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
 
   useEffect(() => {
     const fetchWeather = async () => {

@@ -1,77 +1,94 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { Link, NavLink } from "react-router-dom";
+import { Search, ArrowRight } from "lucide-react";
+import myProfile from "../assets/myProfileSketch.png";
+
+const getAccraTime = () =>
+  new Intl.DateTimeFormat("en-GB", {
+    timeZone: "Africa/Accra",
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false,
+  }).format(new Date());
 
 const Navbar = () => {
+  const [accraTime, setAccraTime] = useState(getAccraTime);
+
+  useEffect(() => {
+    const id = setInterval(() => setAccraTime(getAccraTime()), 60000);
+    return () => clearInterval(id);
+  }, []);
+
   return (
     <div className="flex justify-between items-center p-4 px-10">
       {/* Logo Section */}
       <div className="logo-section">
-        <a href="/" className="flex items-center gap-2 group">
+        <Link to="/" className="flex items-center gap-3 group">
           <div className="relative">
-            <div className="w-10 h-10 bg-gradient-to-br from-violet-600 to-purple-700 rounded-lg flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-110">
-              <span className="text-white font-bold text-lg">D</span>
-            </div>
+            <img
+              src={myProfile}
+              alt="Profile"
+              className="w-10 h-10 rounded-full object-cover shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-110"
+            />
             <div className="absolute -top-1 -right-1 w-3 h-3 bg-yellow-400 rounded-full animate-pulse"></div>
           </div>
-          <span className="text-xl font-bold text-gray-900 group-hover:text-violet-600 transition-colors duration-300">
-            DOD
-          </span>
-        </a>
+          <div className="flex flex-col leading-tight">
+            <span className="text-base font-medium text-gray-900 group-hover:text-violet-600 transition-colors duration-300">
+              PJ
+            </span>
+            <span className="text-xs font-medium uppercase tracking-wider text-gray-500">
+              Full-Stack Developer
+            </span>
+          </div>
+        </Link>
       </div>
 
       {/* Menu Section */}
       <div className="menus-section">
         <ul className="flex justify-center items-center gap-6">
-          <li>
-            <a
-              href="/"
-              className="hover:text-violet-600 font-medium transition-colors duration-200"
-            >
-              Home
-            </a>
-          </li>
-          <li>
-            <a
-              href="/projects"
-              className="hover:text-violet-600 font-medium transition-colors duration-200"
-            >
-              Projects
-            </a>
-          </li>
-          <li>
-            <a
-              href="/about"
-              className="hover:text-violet-600 font-medium transition-colors duration-200"
-            >
-              About
-            </a>
-          </li>
+          {[
+            { to: "/", label: "Home" },
+            { to: "/projects", label: "Projects" },
+            { to: "/about", label: "About" },
+          ].map(({ to, label }) => (
+            <li key={to}>
+              <NavLink
+                to={to}
+                end={to === "/"}
+                className={({ isActive }) =>
+                  `font-medium uppercase tracking-wider text-gray-900 hover:text-violet-600 pb-1 border-b-2 transition-colors duration-200 ${
+                    isActive ? "border-terracotta" : "border-transparent"
+                  }`
+                }
+              >
+                {label}
+              </NavLink>
+            </li>
+          ))}
         </ul>
       </div>
 
-      {/* Chat Icon */}
-      <div className="chat-section">
-        <a href="/chat">
-          <button className="relative bg-black text-white h-10 w-10 rounded-full shadow-lg hover:bg-violet-700 hover:scale-105 transition-all duration-300 ease-in-out flex items-center justify-center group">
-            {/* Chat Icon */}
-            <svg
-              className="w-5 h-5 group-hover:scale-110 transition-transform duration-200"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
-              />
-            </svg>
+      {/* Right Section */}
+      <div className="flex items-center gap-4">
+        <span className="font-mono text-xs uppercase tracking-wide text-gray-500 whitespace-nowrap">
+          Accra · {accraTime}
+        </span>
 
-            {/* Notification dot */}
-            <div className="absolute -top-1 -right-0 w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
+        <button
+          type="button"
+          aria-label="Search"
+          className="flex items-center gap-1 border border-gray-300 rounded-md px-2 py-1 text-gray-400 hover:text-violet-600 hover:border-violet-300 transition-colors duration-200"
+        >
+          <Search size={14} />
+          <span className="font-mono text-xs tracking-wide">⌘K</span>
+        </button>
+
+        <Link to="/GetInTouch">
+          <button className="flex items-center gap-1 bg-transparent border-2 border-terracotta text-terracotta text-sm font-medium uppercase tracking-wider h-9 px-4 rounded-lg hover:bg-terracotta hover:text-white hover:scale-105 transition-all duration-300 ease-in-out">
+            Get in touch
+            <ArrowRight size={14} />
           </button>
-        </a>
+        </Link>
       </div>
     </div>
   );
