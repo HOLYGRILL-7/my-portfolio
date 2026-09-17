@@ -20,7 +20,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className="flex justify-between items-center p-4 px-10">
+    <div className="flex justify-between items-center p-4 ">
       {/* Logo Section */}
       <div className="logo-section">
         <Link to="/" className="flex items-center gap-3 group">

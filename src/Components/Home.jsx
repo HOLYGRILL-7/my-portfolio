@@ -6,7 +6,7 @@ import GetInTouch from "./GetInTouch";
 
 const Home = () => {
     return (
-        <div className="mt-20 px-10">
+        <div className="mt-20 ">
             <div className="grid grid-cols-2 gap-2 items-start">
                 <div className="first-container space-y-6">
                     <h1 className="font-black text-8xl leading-none text-gray-900">
@@ -18,10 +18,14 @@ const Home = () => {
                     </h1>
 
                     <ul className="my-10 space-y-5 max-w-lg">
-                        <li className="flex items-start gap-2 text-xl font-medium uppercase tracking-wider text-gray-600">
+                        {/* <li className="flex items-start gap-2 text-xl font-medium uppercase tracking-wider text-gray-600">
                             <span className="mt-3 w-1.5 h-1.5 rounded-full bg-terracotta shrink-0"></span>I build fast,
                             functional web experiences with React and modern JavaScript — currently shipping an AI tool
                             that helps NGOs track grant compliance.
+                        </li> */}
+                        <li className="flex items-start gap-2 text-xl font-medium uppercase tracking-wider text-gray-600">
+                            <span className="mt-3 w-1.5 h-1.5 rounded-full bg-terracotta shrink-0"></span>I build fast,
+                            functional web experiences.
                         </li>
                         <li className="flex items-start gap-2 text-sm font-medium uppercase tracking-wider text-gray-500">
                             <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-terracotta shrink-0"></span>
@@ -29,17 +33,17 @@ const Home = () => {
                         </li>
                     </ul>
 
-                    <div className="flex flex-wrap gap-4 ">
-                        <div className="second mt-5 flex flex-wrap gap-4">
+                    <div className="">
+                        <div className="second flex flex-wrap gap-4 ">
                             <Link to="/GetInTouch">
-                                <button className="flex items-center gap-2 font-medium uppercase tracking-wider bg-transparent border-2 border-terracotta text-terracotta h-11 px-6 rounded-lg hover:scale-105 transition-all duration-300 ease-in-out">
+                                <button className="flex items-center gap-2 mt-7 font-medium uppercase tracking-wider bg-transparent border-2 border-terracotta text-terracotta h-11 px-6 rounded-lg hover:scale-105 hover:bg-terracotta hover:text-white transition-all duration-300 ease-in-out">
                                     Get In Touch
                                     <ArrowRight size={16} />
                                 </button>
                             </Link>
 
                             <Link to="/Projects">
-                                <button className="font-medium uppercase tracking-wider bg-transparent border-2 border-terracotta text-terracotta h-11 px-6 rounded-lg hover:scale-105 transition-all duration-300 ease-in-out">
+                                <button className="font-medium  uppercase mt-7 tracking-wider bg-transparent border-2 border-terracotta text-terracotta h-11 px-6 rounded-lg hover:scale-105 transition-all duration-300 ease-in-out">
                                     Browse Projects
                                 </button>
                             </Link>
