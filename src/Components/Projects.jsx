@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import {
   ExternalLink,
   Github,
@@ -7,8 +7,45 @@ import {
   Smartphone,
   Monitor,
   Zap,
+  Play,
 } from "lucide-react";
-import image3 from "../assets/Shopmart.png";
+
+const ClickToPlayVideo = ({ src, className }) => {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const videoRef = useRef(null);
+
+  const handlePlay = () => {
+    setIsPlaying(true);
+    videoRef.current?.play();
+  };
+
+  return (
+    <div className="relative w-full h-full bg-black">
+      <video
+        ref={videoRef}
+        src={src}
+        className={className}
+        preload="metadata"
+        playsInline
+        controls={isPlaying}
+        onPause={() => setIsPlaying(false)}
+        onEnded={() => setIsPlaying(false)}
+      />
+      {!isPlaying && (
+        <button
+          type="button"
+          onClick={handlePlay}
+          aria-label="Play video"
+          className="cursor-pointer absolute inset-0 flex items-center justify-center bg-black/20 hover:bg-black/30 transition-colors duration-300"
+        >
+          <span className="flex items-center justify-center w-16 h-16 rounded-full bg-white/90 shadow-lg">
+            <Play size={28} className="text-gray-900 ml-1" fill="currentColor" />
+          </span>
+        </button>
+      )}
+    </div>
+  );
+};
 
 const ProjectsPage = () => {
   const [activeFilter, setActiveFilter] = useState("all");
@@ -20,7 +57,7 @@ const ProjectsPage = () => {
       title: "Pool",
       description:
         "A React Native app that lets families save toward shared goals together, with real payments powered by Paystack and secure fund routing through Paystack subaccounts. Firebase Cloud Functions handle the backend end to end.",
-      image: image3,
+      image: "/pool.png",
       category: "mobile",
       technologies: ["React Native", "Paystack", "Firebase Cloud Functions"],
       liveUrl: "",
@@ -32,8 +69,7 @@ const ProjectsPage = () => {
       title: "Kofi",
       description:
         "An AI chatbot that brings Ghanaian culture and tourism to life, built with Streamlit and the Gemini API. Wrapped in a Kente-inspired UI that makes every conversation feel distinctly Ghanaian.",
-      image:
-        "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop",
+      video: "/kofi-demo.mp4",
       category: "web",
       technologies: ["Streamlit", "Gemini API", "Python"],
       liveUrl: "",
@@ -45,8 +81,7 @@ const ProjectsPage = () => {
       title: "Sika",
       description:
         "An AI-powered personal finance tracker built in React Native, helping users log transactions, hit savings goals, and get smart insight into their spending.",
-      image:
-        "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=600&h=400&fit=crop",
+      video: "/sika-demo.mp4",
       category: "mobile",
       technologies: ["React Native", "Firebase", "AI"],
       liveUrl: "",
@@ -97,34 +132,43 @@ const ProjectsPage = () => {
                 onMouseLeave={() => setHoveredProject(null)}
               >
                 <div className="relative h-64 overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-300" />
+                  {project.video ? (
+                    <ClickToPlayVideo
+                      src={project.video}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <>
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-300" />
 
-                  {/* Project Actions */}
-                  <div
-                    className={`absolute inset-0 flex items-center justify-center gap-4 transition-all duration-300 ${
-                      hoveredProject === project.id
-                        ? "opacity-100"
-                        : "opacity-0"
-                    }`}
-                  >
-                    <a
-                      href={project.liveUrl}
-                      className="bg-violet-600 text-white p-3 rounded-full hover:bg-violet-700 transition-colors duration-200 hover:scale-110 transform"
-                    >
-                      <Eye size={20} />
-                    </a>
-                    <a
-                      href={project.githubUrl}
-                      className="bg-gray-800 text-white p-3 rounded-full hover:bg-gray-900 transition-colors duration-200 hover:scale-110 transform"
-                    >
-                      <Github size={20} />
-                    </a>
-                  </div>
+                      {/* Project Actions */}
+                      <div
+                        className={`absolute inset-0 flex items-center justify-center gap-4 transition-all duration-300 ${
+                          hoveredProject === project.id
+                            ? "opacity-100"
+                            : "opacity-0"
+                        }`}
+                      >
+                        <a
+                          href={project.liveUrl}
+                          className="bg-violet-600 text-white p-3 rounded-full hover:bg-violet-700 transition-colors duration-200 hover:scale-110 transform"
+                        >
+                          <Eye size={20} />
+                        </a>
+                        <a
+                          href={project.githubUrl}
+                          className="bg-gray-800 text-white p-3 rounded-full hover:bg-gray-900 transition-colors duration-200 hover:scale-110 transform"
+                        >
+                          <Github size={20} />
+                        </a>
+                      </div>
+                    </>
+                  )}
                 </div>
 
                 <div className="p-6">
@@ -195,12 +239,21 @@ const ProjectsPage = () => {
               className="group bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
             >
               <div className="relative h-48 overflow-hidden">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-black/10 group-hover:bg-black/30 transition-colors duration-300" />
+                {project.video ? (
+                  <ClickToPlayVideo
+                    src={project.video}
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <>
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-black/10 group-hover:bg-black/30 transition-colors duration-300" />
+                  </>
+                )}
               </div>
 
               <div className="p-6">

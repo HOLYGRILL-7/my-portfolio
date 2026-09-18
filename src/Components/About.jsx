@@ -1,5 +1,16 @@
 import React from "react";
-import { Download, Sparkles, Layers, Package } from "lucide-react";
+import {
+  Download,
+  Sparkles,
+  Layers,
+  Package,
+  Hammer,
+  Terminal,
+  Wand2,
+  LayoutTemplate,
+  PenTool,
+  Palette,
+} from "lucide-react";
 
 const toolbox = [
   {
@@ -17,6 +28,16 @@ const toolbox = [
       { name: "React Native", icon: "react" },
       { name: "TailwindCSS", icon: "tailwindcss" },
       { name: "Zustand", Fallback: Package },
+      { name: "JavaScript", icon: "javascript" },
+      { name: "TypeScript", icon: "typescript" },
+      { name: "Vite", icon: "vite" },
+    ],
+  },
+  {
+    category: "Mobile",
+    items: [
+      { name: "Expo", icon: "expo" },
+      { name: "EAS Build", Fallback: Hammer },
     ],
   },
   {
@@ -41,6 +62,19 @@ const toolbox = [
       { name: "Git", icon: "git" },
       { name: "GitHub", icon: "github" },
       { name: "Streamlit", icon: "streamlit" },
+      { name: "GitHub CLI", Fallback: Terminal },
+      { name: "Claude Code", icon: "claude" },
+      { name: "Linux", icon: "linux" },
+    ],
+  },
+  {
+    category: "AI Design & Prototyping",
+    items: [
+      { name: "Ideogram", Fallback: Wand2 },
+      { name: "Stitch", Fallback: LayoutTemplate },
+      { name: "Banani", Fallback: PenTool },
+      { name: "Logo Diffusion", Fallback: Palette },
+      { name: "Figma", icon: "figma" },
     ],
   },
 ];
