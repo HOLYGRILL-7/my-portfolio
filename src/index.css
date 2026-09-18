@@ -1,14 +1,46 @@
 @import "tailwindcss";
 
+/* Inter stand-in used while the web font loads. Arial scaled so text is as
+   wide as Inter at each weight, so the font swap doesn't re-wrap text or
+   change page height. size-adjust values were measured against the site's
+   real strings (mixed-case body text at 400 is ~7% wider than Arial).
+   The 500 face (all the uppercase UI text) is tuned to 101%, slightly above
+   the measured 99.6%, against a width sweep: the fallback then errs a hair
+   wide, so the swap can only shrink text blocks, never grow the page. */
+@font-face {
+  font-family: "Inter Fallback";
+  src: local("Arial");
+  font-weight: 400;
+  size-adjust: 107.15%;
+}
+@font-face {
+  font-family: "Inter Fallback";
+  src: local("Arial");
+  font-weight: 500;
+  size-adjust: 101%;
+}
+@font-face {
+  font-family: "Inter Fallback";
+  src: local("Arial Bold"), local("Arial-BoldMT");
+  font-weight: 700;
+  size-adjust: 101.65%;
+}
+@font-face {
+  font-family: "Inter Fallback";
+  src: local("Arial Bold"), local("Arial-BoldMT");
+  font-weight: 900;
+  size-adjust: 104.25%;
+}
+
 @theme {
   --color-terracotta: #b5451b;
   --color-cream: #f5f1ea;
-  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-sans: "Inter", "Inter Fallback", ui-sans-serif, system-ui, -apple-system, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 }
 
 html,
 body {
   background-color: var(--color-cream);
-  font-family: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  font-family: "Inter", "Inter Fallback", ui-sans-serif, system-ui, -apple-system, sans-serif;
 }

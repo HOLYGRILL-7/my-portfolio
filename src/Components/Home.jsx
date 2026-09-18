@@ -1,5 +1,5 @@
 import React from "react";
-import myProfile from "../assets/myProfileSketch.png";
+import myProfile from "../assets/myProfileSketch.webp";
 import {Link} from "react-router-dom";
 import {ArrowRight} from "lucide-react";
 import GetInTouch from "./GetInTouch";

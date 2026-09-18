@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { Search, ArrowRight, Menu, X } from "lucide-react";
-import myProfile from "../assets/myProfileSketch.png";
+import myProfile from "../assets/myProfileSketch.webp";
 
 const getAccraTime = () =>
   new Intl.DateTimeFormat("en-GB", {
