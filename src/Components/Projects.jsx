@@ -24,7 +24,7 @@ const ProjectsPage = () => {
       category: "mobile",
       technologies: ["React Native", "Paystack", "Firebase Cloud Functions"],
       liveUrl: "",
-      githubUrl: "https://github.com/HOLYGRILL-7/PoolUp",
+      githubUrl: "https://github.com/HOLYGRILL-7/Pool-Fintech",
       featured: true,
     },
     {
