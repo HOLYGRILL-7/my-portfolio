@@ -8,8 +8,9 @@ const Home = () => {
     return (
         <div className="mt-10 md:mt-12 px-4 sm:px-6 md:px-10">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-2 items-start">
-                <div className="first-container space-y-6">
-                    <h1 className="font-black text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-none text-gray-900">
+                {/* Heading and gaps only shrink when the viewport is shorter than the column needs (~712px md, ~696px lg). */}
+                <div className="first-container space-y-6 md:[--hero-heading:clamp(3rem,calc(24vh_-_6.18rem),4.5rem)] md:[--hero-gap:clamp(1.5rem,calc(18vh_-_5.51rem),2.5rem)] md:[--hero-btn-mt:clamp(0.75rem,calc(12vh_-_3.59rem),1.75rem)] lg:[--hero-heading:clamp(3.5rem,calc(24vh_-_4.44rem),6rem)] lg:[--hero-gap:clamp(1.5rem,calc(18vh_-_5.33rem),2.5rem)] lg:[--hero-btn-mt:clamp(0.75rem,calc(12vh_-_3.47rem),1.75rem)]">
+                    <h1 className="font-black text-5xl sm:text-6xl md:text-[length:var(--hero-heading)] leading-none text-gray-900">
                         Dream.
                         <br />
                         Plan.
@@ -17,7 +18,7 @@ const Home = () => {
                         <span className="text-terracotta">Build.</span>
                     </h1>
 
-                    <ul className="my-10 space-y-5 max-w-lg">
+                    <ul className="my-10 md:my-[var(--hero-gap)] space-y-5 max-w-lg">
                         {/* <li className="flex items-start gap-2 text-xl font-medium uppercase tracking-wider text-gray-600">
                             <span className="mt-3 w-1.5 h-1.5 rounded-full bg-terracotta shrink-0"></span>I build fast,
                             functional web experiences with React and modern JavaScript — currently shipping an AI tool
@@ -36,14 +37,14 @@ const Home = () => {
                     <div className="">
                         <div className="second flex flex-wrap gap-4 ">
                             <Link to="/GetInTouch">
-                                <button className="cursor-pointer flex items-center gap-2 mt-7 font-medium uppercase tracking-wider bg-[#1a1816] text-white h-11 px-6 rounded-lg hover:scale-105  hover:text-white transition-all duration-300 ease-in-out">
+                                <button className="cursor-pointer flex items-center gap-2 mt-7 md:mt-[var(--hero-btn-mt)] font-medium uppercase tracking-wider bg-[#1a1816] text-white h-11 px-6 rounded-lg hover:scale-105  hover:text-white transition-all duration-300 ease-in-out">
                                     Get In Touch
                                     <ArrowRight size={16} />
                                 </button>
                             </Link>
 
                             <Link to="/Projects">
-                                <button className="cursor-pointer font-medium  uppercase mt-7 tracking-wider bg-transparent border-2 border-terracotta text-terracotta h-11 px-6 rounded-lg hover:scale-105 hover:bg-terracotta hover:text-white transition-all duration-300 ease-in-out">
+                                <button className="cursor-pointer font-medium  uppercase mt-7 md:mt-[var(--hero-btn-mt)] tracking-wider bg-transparent border-2 border-terracotta text-terracotta h-11 px-6 rounded-lg hover:scale-105 hover:bg-terracotta hover:text-white transition-all duration-300 ease-in-out">
                                     Browse Projects
                                 </button>
                             </Link>
