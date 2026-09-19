@@ -34,7 +34,7 @@ const Home = () => {
                         </li>
                     </ul>
 
-                    <div className="lg:-mt-[var(--hero-align)]">
+                    <div className="lg:-mt-[var(--hero-align)] pt-5">
                         <div className="second flex flex-wrap gap-4 ">
                             <Link to="/GetInTouch">
                                 <button className="cursor-pointer flex items-center gap-2 mt-7 md:mt-[var(--hero-btn-mt)] font-medium uppercase tracking-wider bg-[#1a1816] text-white h-11 px-6 rounded-lg hover:scale-105  hover:text-white transition-all duration-300 ease-in-out">

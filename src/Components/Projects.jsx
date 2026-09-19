@@ -157,7 +157,7 @@ const ProjectsPage = () => {
                       >
                         <a
                           href={project.liveUrl}
-                          className="bg-violet-600 text-white p-3 rounded-full hover:bg-violet-700 transition-colors duration-200 hover:scale-110 transform"
+                          className="bg-terracotta text-white p-3 rounded-full hover:brightness-90 transition duration-200 hover:scale-110 transform"
                         >
                           <Eye size={20} />
                         </a>
@@ -182,7 +182,7 @@ const ProjectsPage = () => {
                     {project.technologies.map((tech, index) => (
                       <span
                         key={index}
-                        className="px-3 py-1 bg-violet-100 text-violet-700 rounded-full text-sm font-medium"
+                        className="px-3 py-1 bg-terracotta/10 text-terracotta rounded-full text-sm font-medium"
                       >
                         {tech}
                       </span>
@@ -192,7 +192,7 @@ const ProjectsPage = () => {
                   <div className="flex gap-3">
                     <a
                       href={project.liveUrl}
-                      className="flex items-center gap-2 text-violet-600 hover:text-violet-700 font-medium transition-colors"
+                      className="flex items-center gap-2 text-terracotta hover:brightness-75 font-medium transition"
                     >
                       <ExternalLink size={16} />
                       Live Demo
@@ -221,8 +221,8 @@ const ProjectsPage = () => {
                 onClick={() => setActiveFilter(category.id)}
                 className={`cursor-pointer flex items-center gap-2 px-6 py-3 rounded-full font-medium transition-all duration-300 ${
                   activeFilter === category.id
-                    ? "bg-violet-600 text-white shadow-lg transform scale-105"
-                    : "bg-white text-gray-700 hover:bg-violet-50 hover:text-violet-600 shadow-md"
+                    ? "bg-terracotta text-white shadow-lg transform scale-105"
+                    : "bg-white text-gray-700 hover:bg-terracotta/10 hover:text-terracotta shadow-md"
                 }`}
               >
                 <IconComponent size={18} />
@@ -284,7 +284,7 @@ const ProjectsPage = () => {
                 <div className="flex gap-3">
                   <a
                     href={project.liveUrl}
-                    className="flex items-center gap-1 text-violet-600 hover:text-violet-700 text-sm font-medium transition-colors"
+                    className="flex items-center gap-1 text-terracotta hover:brightness-75 text-sm font-medium transition"
                   >
                     <ExternalLink size={14} />
                     Demo
@@ -304,16 +304,16 @@ const ProjectsPage = () => {
 
         {/* Call to Action */}
         <div className="text-center mt-16">
-          <div className="bg-gradient-to-r from-violet-600 to-purple-600 rounded-2xl p-8 shadow-xl">
+          <div className="bg-terracotta rounded-2xl p-8 shadow-xl">
             <h3 className="text-2xl font-bold text-white mb-4">
               Interested in working together?
             </h3>
-            <p className="text-violet-100 mb-6 max-w-2xl mx-auto">
+            <p className="text-white/90 mb-6 max-w-2xl mx-auto">
               I'm always open to discussing new opportunities and exciting
               projects. Let's create something amazing together!
             </p>
             <Link to="/GetInTouch">
-              <button className="cursor-pointer bg-white text-violet-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105">
+              <button className="cursor-pointer bg-white text-terracotta px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105">
                 Get In Touch
               </button>
             </Link>

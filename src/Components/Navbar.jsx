@@ -78,7 +78,7 @@ const Navbar = () => {
           <button
             type="button"
             aria-label="Search"
-            className="cursor-pointer flex items-center gap-1 border border-gray-300 rounded-md px-2 py-1 text-gray-400 hover:text-violet-600 hover:border-violet-300 transition-colors duration-200"
+            className="cursor-pointer flex items-center gap-1 border border-gray-300 rounded-md px-2 py-1 text-gray-400 hover:text-terracotta hover:border-terracotta transition-colors duration-200"
           >
             <Search size={14} />
             <span className="font-mono text-xs tracking-wide">⌘K</span>
