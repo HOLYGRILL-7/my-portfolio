@@ -9,7 +9,7 @@ const Home = () => {
         <div className="mt-10 md:mt-12 px-4 sm:px-6 md:px-10">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-2 items-start">
                 {/* Heading and gaps only shrink when the viewport is shorter than the column needs (~712px md, ~696px lg). */}
-                <div className="first-container space-y-6 md:[--hero-heading:clamp(3rem,calc(24vh_-_6.18rem),4.5rem)] md:[--hero-gap:clamp(1.5rem,calc(18vh_-_5.51rem),2.5rem)] md:[--hero-btn-mt:clamp(0.75rem,calc(12vh_-_3.59rem),1.75rem)] lg:[--hero-heading:clamp(3.5rem,calc(24vh_-_4.44rem),6rem)] lg:[--hero-gap:clamp(1.5rem,calc(18vh_-_5.33rem),2.5rem)] lg:[--hero-btn-mt:clamp(0.75rem,calc(12vh_-_3.47rem),1.75rem)]">
+                <div className="first-container space-y-6 md:[--hero-heading:clamp(3rem,calc(24vh_-_6.18rem),4.5rem)] md:[--hero-gap:clamp(1.5rem,calc(18vh_-_5.51rem),2.5rem)] md:[--hero-btn-mt:clamp(0.75rem,calc(12vh_-_3.59rem),1.75rem)] lg:[--hero-heading:clamp(3.5rem,calc(24vh_-_4.44rem),6rem)] lg:[--hero-gap:clamp(1.5rem,calc(18vh_-_5.33rem),2.5rem)] lg:[--hero-btn-mt:clamp(0.75rem,calc(12vh_-_3.47rem),1.75rem)] lg:[--hero-align:clamp(0rem,calc(20.83vh_-_7.8125rem),1.25rem)]">
                     <h1 className="font-black text-5xl sm:text-6xl md:text-[length:var(--hero-heading)] leading-none text-gray-900">
                         Dream.
                         <br />
@@ -34,7 +34,7 @@ const Home = () => {
                         </li>
                     </ul>
 
-                    <div className="">
+                    <div className="lg:-mt-[var(--hero-align)]">
                         <div className="second flex flex-wrap gap-4 ">
                             <Link to="/GetInTouch">
                                 <button className="cursor-pointer flex items-center gap-2 mt-7 md:mt-[var(--hero-btn-mt)] font-medium uppercase tracking-wider bg-[#1a1816] text-white h-11 px-6 rounded-lg hover:scale-105  hover:text-white transition-all duration-300 ease-in-out">
