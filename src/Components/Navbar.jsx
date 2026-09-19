@@ -46,7 +46,7 @@ const Navbar = () => {
               <div className="absolute -top-1 -right-1 w-3 h-3 bg-yellow-400 rounded-full animate-pulse"></div>
             </div>
             <div className="hidden sm:flex flex-col leading-tight">
-              <span className="text-base font-medium text-gray-900 group-hover:text-violet-600 transition-colors duration-300">
+              <span className="text-base font-medium text-gray-900">
                 PJ
               </span>
               <span className="text-xs font-medium uppercase tracking-wider text-gray-500">

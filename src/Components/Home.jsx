@@ -6,7 +6,7 @@ import GetInTouch from "./GetInTouch";
 
 const Home = () => {
     return (
-        <div className="mt-10 md:mt-20 px-4 sm:px-6 md:px-10">
+        <div className="mt-10 md:mt-12 px-4 sm:px-6 md:px-10">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-2 items-start">
                 <div className="first-container space-y-6">
                     <h1 className="font-black text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-none text-gray-900">

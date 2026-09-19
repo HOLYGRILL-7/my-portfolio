@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import {
   ExternalLink,
   Github,
@@ -69,7 +70,7 @@ const ProjectsPage = () => {
       title: "Kofi",
       description:
         "An AI chatbot that brings Ghanaian culture and tourism to life, built with Streamlit and the Gemini API. Wrapped in a Kente-inspired UI that makes every conversation feel distinctly Ghanaian.",
-      video: "/kofi-demo.mp4",
+      image: "/kofi-thumbnail.jpg",
       category: "web",
       technologies: ["Streamlit", "Gemini API", "Python"],
       liveUrl: "",
@@ -81,7 +82,7 @@ const ProjectsPage = () => {
       title: "Sika",
       description:
         "An AI-powered personal finance tracker built in React Native, helping users log transactions, hit savings goals, and get smart insight into their spending.",
-      video: "/sika-demo.mp4",
+      image: "/sika-thumbnail.jpg",
       category: "mobile",
       technologies: ["React Native", "Firebase", "AI"],
       liveUrl: "",
@@ -311,9 +312,11 @@ const ProjectsPage = () => {
               I'm always open to discussing new opportunities and exciting
               projects. Let's create something amazing together!
             </p>
-            <button className="cursor-pointer bg-white text-violet-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105">
-              Get In Touch
-            </button>
+            <Link to="/GetInTouch">
+              <button className="cursor-pointer bg-white text-violet-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105">
+                Get In Touch
+              </button>
+            </Link>
           </div>
         </div>
       </div>
