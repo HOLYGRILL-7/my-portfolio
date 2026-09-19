@@ -51,12 +51,12 @@ const Home = () => {
                     </div>
                 </div>
                 <div className="second-container flex flex-col items-center gap-8 pt-5">
-                    <div className="bg-white rounded-full border-2 border-solid border-slate-200 h-56 w-56 sm:h-72 sm:w-72 md:h-96 md:w-96 lg:h-[30rem] lg:w-[30rem] relative flex items-center justify-center mt-0 md:-mt-15 shadow-lg">
-                        <div className="rounded-full border-2 border-dotted border-violet-300 h-52 w-52 sm:h-64 sm:w-64 md:h-[22rem] md:w-[22rem] lg:h-[28rem] lg:w-[28rem] flex items-center justify-center">
+                    <div className="bg-white rounded-full border-2 border-solid border-slate-200 h-56 w-56 sm:h-72 sm:w-72 md:[--photo:clamp(12rem,calc(100vh_-_15.25rem),24rem)] lg:[--photo:clamp(12rem,calc(100vh_-_15.25rem),30rem)] md:h-[var(--photo)] md:w-[var(--photo)] relative flex items-center justify-center mt-0 md:-mt-15 shadow-lg">
+                        <div className="rounded-full h-52 w-52 sm:h-64 sm:w-64 md:h-[calc(var(--photo)_-_2rem)] md:w-[calc(var(--photo)_-_2rem)] flex items-center justify-center">
                             <img
                                 src={myProfile}
                                 alt="Profile"
-                                className="h-52 w-52 sm:h-64 sm:w-64 md:h-[22rem] md:w-[22rem] lg:h-[28rem] lg:w-[28rem] object-cover rounded-full"
+                                className="h-52 w-52 sm:h-64 sm:w-64 md:h-[calc(var(--photo)_-_2rem)] md:w-[calc(var(--photo)_-_2rem)] object-cover rounded-full"
                             />
                         </div>
                     </div>
