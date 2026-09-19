@@ -157,7 +157,7 @@ const ProjectsPage = () => {
                       >
                         <a
                           href={project.liveUrl}
-                          className="bg-terracotta text-white p-3 rounded-full hover:brightness-90 transition duration-200 hover:scale-110 transform"
+                          className="bg-terracotta text-white p-3 rounded-full hover:bg-terracotta/80 transition-colors duration-200 hover:scale-110 transform"
                         >
                           <Eye size={20} />
                         </a>
@@ -192,7 +192,7 @@ const ProjectsPage = () => {
                   <div className="flex gap-3">
                     <a
                       href={project.liveUrl}
-                      className="flex items-center gap-2 text-terracotta hover:brightness-75 font-medium transition"
+                      className="flex items-center gap-2 text-terracotta hover:text-terracotta/80 font-medium transition-colors"
                     >
                       <ExternalLink size={16} />
                       Live Demo
@@ -284,7 +284,7 @@ const ProjectsPage = () => {
                 <div className="flex gap-3">
                   <a
                     href={project.liveUrl}
-                    className="flex items-center gap-1 text-terracotta hover:brightness-75 text-sm font-medium transition"
+                    className="flex items-center gap-1 text-terracotta hover:text-terracotta/80 text-sm font-medium transition-colors"
                   >
                     <ExternalLink size={14} />
                     Demo
@@ -308,7 +308,7 @@ const ProjectsPage = () => {
             <h3 className="text-2xl font-bold text-white mb-4">
               Interested in working together?
             </h3>
-            <p className="text-white/90 mb-6 max-w-2xl mx-auto">
+            <p className="text-cream mb-6 max-w-2xl mx-auto">
               I'm always open to discussing new opportunities and exciting
               projects. Let's create something amazing together!
             </p>
