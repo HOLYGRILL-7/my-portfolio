@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import extraMotorsHome from "../assets/extra-motors-home.webp";
 import {
   ExternalLink,
   Github,
@@ -87,6 +88,18 @@ const ProjectsPage = () => {
       technologies: ["React Native", "Firebase", "AI"],
       liveUrl: "",
       githubUrl: "https://github.com/HOLYGRILL-7/my-Sika-react-native",
+      featured: true,
+    },
+    {
+      id: 4,
+      title: "Extra Motors",
+      description:
+        "A used car import and sales platform for a local dealer in Ghana, with public listings filterable by price, body style, fuel type and transmission, and an admin panel for managing inventory, testimonials and registered users. Built with Firebase Authentication, Firestore and Storage throughout.",
+      image: extraMotorsHome,
+      category: "web",
+      technologies: ["React", "Firebase", "Tailwind"],
+      liveUrl: "https://xtra-motors.vercel.app",
+      githubUrl: "https://github.com/HOLYGRILL-7/Car-Import-Frontend",
       featured: true,
     },
   ];
