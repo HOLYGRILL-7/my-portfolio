@@ -65,7 +65,7 @@ const Home = () => {
                     <div className="w-full max-w-2xl mt-5">
                         <div className="grid grid-cols-3 gap-2 sm:gap-6 md:gap-8">
                             <div>
-                                <p className="text-2xl sm:text-4xl md:text-5xl font-bold text-center text-terracotta">3</p>
+                                <p className="text-2xl sm:text-4xl md:text-5xl font-bold text-center text-terracotta">4</p>
                                 <p className="text-[10px] sm:text-xs font-medium uppercase tracking-wider text-gray-500 mt-1 text-center">
                                     Projects Shipped
                                 </p>
